@@ -3,10 +3,10 @@ package com.devsuperior.movieflix.entities;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class GenreTests {
+class GenreTests {
 
 	@Test
-	public void genreShouldHaveCorrectStructure() {
+	void genreShouldHaveCorrectStructure() {
 	
 		Genre entity = new Genre();
 		entity.setId(1L);

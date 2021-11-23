@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public class ReviewResourceIT {
+class ReviewResourceIT {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -47,7 +47,7 @@ public class ReviewResourceIT {
 	}
 
 	@Test
-	public void insertShouldReturnUnauthorizedWhenNotValidToken() throws Exception {
+	void insertShouldReturnUnauthorizedWhenNotValidToken() throws Exception {
 
 		ReviewDTO reviewDTO = new ReviewDTO();
 		reviewDTO.setText("Gostei do filme!");
@@ -65,7 +65,7 @@ public class ReviewResourceIT {
 	}
 	
 	@Test
-	public void insertShouldReturnForbiddenWhenVisitorAuthenticated() throws Exception {
+	void insertShouldReturnForbiddenWhenVisitorAuthenticated() throws Exception {
 	
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, visitorUsername, visitorPassword);
 		
@@ -86,7 +86,7 @@ public class ReviewResourceIT {
 	}
 	
 	@Test
-	public void insertShouldInsertReviewWhenMemberAuthenticatedAndValidData() throws Exception {
+	void insertShouldInsertReviewWhenMemberAuthenticatedAndValidData() throws Exception {
 		
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, memberUsername, memberPassword);
 		
@@ -119,7 +119,7 @@ public class ReviewResourceIT {
 	}
 
 	@Test
-	public void insertShouldReturnUnproccessableEntityWhenMemberAuthenticatedAndInvalidData() throws Exception {
+	void insertShouldReturnUnproccessableEntityWhenMemberAuthenticatedAndInvalidData() throws Exception {
 		
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, memberUsername, memberPassword);
 		

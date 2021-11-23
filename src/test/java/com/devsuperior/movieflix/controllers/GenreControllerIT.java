@@ -19,7 +19,7 @@ import com.devsuperior.movieflix.tests.TokenUtil;
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public class GenreControllerIT {
+class GenreControllerIT {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -42,7 +42,7 @@ public class GenreControllerIT {
 	}
 
 	@Test
-	public void findAllShouldReturnUnauthorizedWhenNotValidToken() throws Exception {
+	void findAllShouldReturnUnauthorizedWhenNotValidToken() throws Exception {
 
 		ResultActions result =
 				mockMvc.perform(get("/genres")
@@ -52,7 +52,7 @@ public class GenreControllerIT {
 	}
 	
 	@Test
-	public void findAllShouldReturnAllGenresWhenVisitorAuthenticated() throws Exception {
+	void findAllShouldReturnAllGenresWhenVisitorAuthenticated() throws Exception {
 
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, visitorUsername, visitorPassword);
 		
@@ -71,7 +71,7 @@ public class GenreControllerIT {
 	}
 	
 	@Test
-	public void findAllShouldReturnAllGenresWhenMemberAuthenticated() throws Exception {
+	void findAllShouldReturnAllGenresWhenMemberAuthenticated() throws Exception {
 
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, memberUsername, memberPassword);
 

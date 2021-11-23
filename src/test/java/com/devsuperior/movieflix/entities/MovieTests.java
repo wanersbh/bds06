@@ -3,10 +3,10 @@ package com.devsuperior.movieflix.entities;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MovieTests {
+class MovieTests {
 
 	@Test
-	public void movieShouldHaveCorrectStructure() {
+	void movieShouldHaveCorrectStructure() {
 	
 		Movie entity = new Movie();
 		entity.setId(1L);
